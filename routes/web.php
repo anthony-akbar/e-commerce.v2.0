@@ -16,7 +16,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $categories = Category::all();
+    return view('front.front', compact('categories'));
 });
 
 Route::group(['namespace'=>'admin', 'prefix'=>'admin'], function () {
