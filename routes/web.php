@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\admin\DashboardController;
+use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +17,25 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::group(['namespace'=>'admin', 'prefix'=>'admin'], function () {
+   Route::get('/', [DashboardController::class, 'index'])->name('admin.index');
+});
+
+Route::get('/admin', function (){
+   return view('admin.index');
+});
+
+Route::get('/test', function () {
+   $categories = Category::all();
+
+   foreach ($categories as $category) {
+       if(!$category->children->isEmpty()){
+           dump($category->title . '      +');
+       }else {
+           dump($category->title);
+       }
+   }
+
 });
