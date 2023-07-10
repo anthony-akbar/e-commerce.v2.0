@@ -134,7 +134,7 @@
 
 <body class="common-home   layout-1">
 
-@include('front.sections.header')
+@include('front.main.sections.header')
 
 <div class="content-top-breadcum">
     <div class="container">
@@ -144,15 +144,16 @@
 
 <div id="content" class="col-sm-12">
 
-    @include('front.sections.content.top')
+    @include('front.main.sections.content.top')
 
-    @include('front.sections.content.bottom')
+    @include('front.main.sections.content.bottom')
 
 </div>
 
-@include('front.sections.footer')
+@include('front.main.sections.footer')
 
-<script><!--
+
+<script>
     var wd_live_search = {
         selector: '#search input[name=\'search\']',
         text_no_matches: '',
