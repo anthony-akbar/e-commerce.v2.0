@@ -24,7 +24,7 @@
                                 </div>
                             </div>
 
-                            <div class="newletter-popup">
+                            {{--<div class="newletter-popup">
                                 <div class="ttpopupclose"></div>
                                 <div id="boxes" class="newletter-container">
                                     <div style="" id="dialog" class="window">
@@ -145,7 +145,7 @@
 
                                 </div>
                             </div><!-- /.box -->
-
+--}}
                             <div class="social-block">
                                 <h5 class="">Follow Us</h5>
                                 <ul>

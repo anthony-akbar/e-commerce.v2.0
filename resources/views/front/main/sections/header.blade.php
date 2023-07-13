@@ -127,275 +127,44 @@
                                 </div>
                                 <div class="wd-menu horizontal-menu wd-menu-bar" id="wd-menu-2369">
                                     <ul class="ul-top-items">
-                                        @foreach($categories as $category)
-                                            if($category->parentId == null){
+                                        @foreach($categories as $key => $category)
+                                            @if($category->children->count() === 0)
+                                                <li class="li-top-item mega-menu">
+                                                    <a class="a-top-link" href="index0854.html?route=product/category&amp;path=62">
+                                                        <span>{{ $category->title }}</span>
+                                                    </a>
+                                                </li>
+                                            @else
+                                                @if($category->parentId === null)
+                                                    <li class="li-top-item mega-menu wd-sub-menu">
+                                                        <a class="a-top-link" href="index98dc.html?route=product/category&amp;path=20">
+                                                            <span>{{ $category->title }}</span>
+                                                        </a>
+                                                        <!-- Mega Menu -->
+                                                        <div class="mega-menu-container product-thumb sub-menu-container ">
+                                                            <div class="container">
+                                                        @foreach($category->children as $item)
 
-                                            }
+                                                                <div class="col-sm-6 sub-item2-content" data-cols="6">
+                                                                    <div class="sub-cate-img">
+                                                                    </div>
+                                                                    <a class="a-mega-second-link" href="index460c.html?route=product/category&amp;path=80"><h4><strong>{{ $item->title }}</strong></h4></a>
+                                                                    <div class="sub_item3-content">
+                                                                        @foreach($item->children as $items)
+                                                                            <a class="a-mega-third-link" href="indexa220.html?route=product/category&amp;path=80_83"><h5>{{ $items->title }}</h5></a>
+                                                                        @endforeach
+                                                                    </div>
+                                                                </div>
+                                                        @endforeach
+
+                                                            </div>
+                                                        </div>
+                                                        <!-- Flyout Menu -->
+                                                    </li>
+
+                                                @endif
+                                            @endif
                                         @endforeach
-                                        <li class="li-top-item mega-menu wd-sub-menu">
-                                            <a class="a-top-link" href="index98dc.html?route=product/category&amp;path=20">
-                                                <span>Electronics</span>
-                                            </a>
-                                            <!-- Mega Menu -->
-
-
-                                            <div class="mega-menu-container product-thumb sub-menu-container ">
-                                                <div class="container">
-                                                    <div class="col-sm-6 sub-item2-content" data-cols="6">
-                                                        <div class="sub-cate-img">
-                                                        </div>
-                                                        <a class="a-mega-second-link" href="index460c.html?route=product/category&amp;path=80"><h4><strong>Ear Buds</strong></h4></a>
-                                                        <div class="sub_item3-content">
-                                                            <a class="a-mega-third-link" href="indexa220.html?route=product/category&amp;path=80_83"><h5>Direct TV</h5></a>
-                                                            <a class="a-mega-third-link" href="index8e1e.html?route=product/category&amp;path=80_81"><h5>LCD Screen</h5></a>
-                                                            <a class="a-mega-third-link" href="index6684.html?route=product/category&amp;path=80_82"><h5>LED Screen</h5></a>
-                                                        </div>
-                                                    </div>
-
-
-
-                                                    <div class="col-sm-6 sub-item2-content" data-cols="6">
-                                                        <div class="sub-cate-img">
-                                                        </div>
-                                                        <a class="a-mega-second-link" href="index76bc.html?route=product/category&amp;path=61"><h4><strong>Laptop</strong></h4></a>
-                                                        <div class="sub_item3-content">
-                                                            <a class="a-mega-third-link" href="index248d.html?route=product/category&amp;path=61_64"><h5>Apple MacBook</h5></a>
-                                                            <a class="a-mega-third-link" href="index4fb6.html?route=product/category&amp;path=61_65"><h5>Convertible</h5></a>
-                                                            <a class="a-mega-third-link" href="index7bfe.html?route=product/category&amp;path=61_63"><h5>Netbook</h5></a>
-                                                        </div>
-                                                    </div>
-
-
-
-                                                    <div class="col-sm-6 sub-item2-content" data-cols="6">
-                                                        <div class="sub-cate-img">
-                                                        </div>
-                                                        <a class="a-mega-second-link" href="index1647.html?route=product/category&amp;path=25"><h4><strong>Smart Phone</strong></h4></a>
-                                                        <div class="sub_item3-content">
-                                                            <a class="a-mega-third-link" href="indexe177.html?route=product/category&amp;path=25_28"><h5>Android</h5></a>
-                                                            <a class="a-mega-third-link" href="indexc219.html?route=product/category&amp;path=25_29"><h5>iPhone</h5></a>
-                                                            <a class="a-mega-third-link" href="index955a.html?route=product/category&amp;path=25_32"><h5>Windows phones</h5></a>
-                                                        </div>
-                                                    </div>
-
-
-
-                                                    <div class="col-sm-6 sub-item2-content" data-cols="6">
-                                                        <div class="sub-cate-img">
-                                                        </div>
-                                                        <a class="a-mega-second-link" href="index0027.html?route=product/category&amp;path=27"><h4><strong>Headphones</strong></h4></a>
-                                                        <div class="sub_item3-content">
-                                                            <a class="a-mega-third-link" href="index6b95.html?route=product/category&amp;path=27_60"><h5>Headsets</h5></a>
-                                                            <a class="a-mega-third-link" href="index368b.html?route=product/category&amp;path=27_26"><h5>Wired Earbuds</h5></a>
-                                                            <a class="a-mega-third-link" href="indexb71a.html?route=product/category&amp;path=27_79"><h5>Airpods</h5></a>
-                                                        </div>
-                                                    </div>
-
-
-
-                                                </div>
-                                            </div>
-
-                                            <!-- Flyout Menu -->
-                                        </li>
-
-                                        <li class="li-top-item mega-menu wd-sub-menu">
-                                            <a class="a-top-link" href="index70a9.html?route=product/category&amp;path=57">
-                                                <span>Airpods</span>
-                                            </a>
-                                            <!-- Mega Menu -->
-
-
-                                            <div class="mega-menu-container product-thumb sub-menu-container ">
-                                                <div class="container">
-
-                                                    <div class="col-sm-2 sub-item2-content div-product" data-cols="2">
-                                                        <div class="product-img">
-                                                            <a class="a-mega-second-link" href="index6320.html?route=product/product&amp;product_id=28">
-                                                                <img src="image/cache/catalog/06-256x256.jpg" alt="Apple AirPods Max 2020 with Smart Case – Blue" class="mega-second-image" />
-                                                            </a>
-                                                        </div>
-                                                        <a class="a-mega-second-link detail" href="index6320.html?route=product/product&amp;product_id=28">
-                                                            <h4><strong>Apple AirPods Max 2020 with Smart Case – Blue</strong></h4>
-                                                            <p class="price">
-                                                                <span class="price-new">$3,600,002.00</span> <span class="price-old">$122.00</span>
-                                                            </p>
-
-                                                        </a>
-                                                    </div>
-
-
-
-                                                    <div class="col-sm-2 sub-item2-content div-product" data-cols="2">
-                                                        <div class="product-img">
-                                                            <a class="a-mega-second-link" href="indexb77e.html?route=product/product&amp;product_id=48">
-                                                                <img src="image/cache/catalog/03-256x256.jpg" alt="Sony EXTRA BASS Portable Splash-proof Wireless Speaker" class="mega-second-image" />
-                                                            </a>
-                                                        </div>
-                                                        <a class="a-mega-second-link detail" href="indexb77e.html?route=product/product&amp;product_id=48">
-                                                            <h4><strong>Sony EXTRA BASS Portable Splash-proof Wireless Speaker</strong></h4>
-                                                            <p class="price">
-                                                                $122.00
-                                                            </p>
-
-                                                        </a>
-                                                    </div>
-
-
-
-                                                    <div class="col-sm-2 sub-item2-content div-product" data-cols="2">
-                                                        <div class="product-img">
-                                                            <a class="a-mega-second-link" href="index5e0b.html?route=product/product&amp;product_id=36">
-                                                                <img src="image/cache/catalog/07-256x256.jpg" alt="Apple iPhone 13 (128GB) – Starlight Light Blue" class="mega-second-image" />
-                                                            </a>
-                                                        </div>
-                                                        <a class="a-mega-second-link detail" href="index5e0b.html?route=product/product&amp;product_id=36">
-                                                            <h4><strong>Apple iPhone 13 (128GB) – Starlight Light Blue</strong></h4>
-                                                            <p class="price">
-                                                                $122.00
-                                                            </p>
-
-                                                        </a>
-                                                    </div>
-
-
-
-                                                    <div class="col-sm-2 sub-item2-content div-product" data-cols="2">
-                                                        <div class="product-img">
-                                                            <a class="a-mega-second-link" href="indexd21c.html?route=product/product&amp;product_id=47">
-                                                                <img src="image/cache/catalog/04-256x256.jpg" alt="realme Pad Mini 3 GB RAM 32 GB ROM 8.7 inch with Wi-Fi+4G, Black" class="mega-second-image" />
-                                                            </a>
-                                                        </div>
-                                                        <a class="a-mega-second-link detail" href="indexd21c.html?route=product/product&amp;product_id=47">
-                                                            <h4><strong>realme Pad Mini 3 GB RAM 32 GB ROM 8.7 inch with Wi-Fi+4G, Black</strong></h4>
-                                                            <p class="price">
-                                                                $122.00
-                                                            </p>
-
-                                                        </a>
-                                                    </div>
-
-
-
-                                                    <div class="col-sm-2 sub-item2-content div-product" data-cols="2">
-                                                        <div class="product-img">
-                                                            <a class="a-mega-second-link" href="index9144.html?route=product/product&amp;product_id=40">
-                                                                <img src="image/cache/catalog/02-256x256.jpg" alt="Apple MacBook Air Laptop: M1 chip, 13.3-inch/33.74 cm" class="mega-second-image" />
-                                                            </a>
-                                                        </div>
-                                                        <a class="a-mega-second-link detail" href="index9144.html?route=product/product&amp;product_id=40">
-                                                            <h4><strong>Apple MacBook Air Laptop: M1 chip, 13.3-inch/33.74 cm</strong></h4>
-                                                            <p class="price">
-                                                                $123.20
-                                                            </p>
-
-                                                        </a>
-                                                    </div>
-
-
-
-                                                    <div class="col-sm-2 sub-item2-content div-product" data-cols="2">
-                                                        <div class="product-img">
-                                                            <a class="a-mega-second-link" href="indexbb02.html?route=product/product&amp;product_id=42">
-                                                                <img src="image/cache/catalog/01-256x256.jpg" alt="Samsung Galaxy Note10+ Mobile Phone; Sim Free Smartphone" class="mega-second-image" />
-                                                            </a>
-                                                        </div>
-                                                        <a class="a-mega-second-link detail" href="indexbb02.html?route=product/product&amp;product_id=42">
-                                                            <h4><strong>Samsung Galaxy Note10+ Mobile Phone; Sim Free Smartphone</strong></h4>
-                                                            <p class="price">
-                                                                <span class="price-new">$110.00</span> <span class="price-old">$122.00</span>
-                                                            </p>
-
-                                                        </a>
-                                                    </div>
-
-
-
-                                                    <div class="col-sm-2 sub-item2-content div-product" data-cols="2">
-                                                        <div class="product-img">
-                                                            <a class="a-mega-second-link" href="indexfac8.html?route=product/product&amp;product_id=35">
-                                                                <img src="image/cache/catalog/08-256x256.jpg" alt="Dell S27QC 27 inch 4K UHD Monitor – Grey" class="mega-second-image" />
-                                                            </a>
-                                                        </div>
-                                                        <a class="a-mega-second-link detail" href="indexfac8.html?route=product/product&amp;product_id=35">
-                                                            <h4><strong>Dell S27QC 27 inch 4K UHD Monitor – Grey</strong></h4>
-                                                            <p class="price">
-                                                                $122.00
-                                                            </p>
-
-                                                        </a>
-                                                    </div>
-
-
-
-                                                    <div class="col-sm-2 sub-item2-content div-product" data-cols="2">
-                                                        <div class="product-img">
-                                                            <a class="a-mega-second-link" href="indexa17e.html?route=product/product&amp;product_id=32">
-                                                                <img src="image/cache/catalog/05-256x256.jpg" alt="Hero Session Action Camera with 8MP Photos" class="mega-second-image" />
-                                                            </a>
-                                                        </div>
-                                                        <a class="a-mega-second-link detail" href="indexa17e.html?route=product/product&amp;product_id=32">
-                                                            <h4><strong>Hero Session Action Camera with 8MP Photos</strong></h4>
-                                                            <p class="price">
-                                                                $122.00
-                                                            </p>
-
-                                                        </a>
-                                                    </div>
-
-
-                                                </div>
-                                            </div>
-
-                                            <!-- Flyout Menu -->
-                                        </li>
-
-                                        <li class="li-top-item wd-sub-menu flyout-menu">
-                                            <a class="a-top-link" href="index7fa3.html?route=product/category&amp;path=18">
-                                                <span>Smart Watch</span>
-                                            </a>
-                                            <!-- Mega Menu -->
-
-                                            <!-- Flyout Menu -->
-
-                                            <div class="wd-sub-menu-container sub-menu-container">
-                                                <ul class="ul-second-items">
-                                                    <li class="li-second-items">
-                                                        <a href="index9f41.html?route=product/category&amp;path=18_46" class="a-second-link a-item">
-                                                            <span class="a-second-title">GPS Smartwatches</span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="li-second-items">
-                                                        <a href="indexba9a.html?route=product/category&amp;path=18_73" class="a-second-link a-item">
-                                                            <span class="a-second-title">Fitness-focused</span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="li-second-items">
-                                                        <a href="index8470.html?route=product/category&amp;path=18_45" class="a-second-link a-item">
-                                                            <span class="a-second-title">Budget Smartwatches</span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="li-second-items">
-                                                        <a href="index96fb.html?route=product/category&amp;path=18_72" class="a-second-link a-item">
-                                                            <span class="a-second-title">Luxury smartwatches</span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-
-                                        <li class="li-top-item mega-menu">
-                                            <a class="a-top-link" href="index0854.html?route=product/category&amp;path=62">
-                                                <span>iPhone</span>
-                                            </a>
-                                        </li>
-
-                                        <li class="li-top-item mega-menu">
-                                            <a class="a-top-link" href="indexc957.html?route=product/category&amp;path=24">
-                                                <span>Computers</span>
-                                            </a>
-                                        </li>
-
 
                                     </ul>
                                 </div>
